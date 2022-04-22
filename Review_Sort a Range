@@ -1,8 +1,10 @@
-Function fn_Sort_Data(in_Sheet As Worksheet, in_rng_Sort_Range As Range)
+Function fn_Sort_Data(in_rng_Sort_Range As Range)
 
-With in_Sheet.Range(in_rng_Sort_Range.Address)
+With in_rng_Sort_Range
     'Add Multiple Sort Orders Here
-    .Sort Key1:=in_Sheet.Range("Q1"), _
+    .Sort Key1:=in_rng_Sort_Range.Range("F1"), _
+        order1:=xlDescending, Header:=xlYes, _
+        Key2:=in_rng_Sort_Range.Range("D1"), _
         order1:=xlDescending, Header:=xlYes
 End With
 
