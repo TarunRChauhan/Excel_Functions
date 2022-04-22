@@ -1,0 +1,6 @@
+Function fn_Add_Formula_To_Range(in_rng_for_Formula As Range, in_str_Formula As String)
+
+in_rng_for_Formula.Cells(1, 1).Formula = in_str_Formula
+in_rng_for_Formula.FillDown
+
+End Function
