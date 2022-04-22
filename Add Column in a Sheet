@@ -1,0 +1,5 @@
+Function fn_Add_Column(in_rng_Base_Range_For_New_Column As Range)
+
+    in_rng_Base_Range_For_New_Column.EntireColumn.Insert
+
+End Function
