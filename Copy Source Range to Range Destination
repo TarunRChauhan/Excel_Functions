@@ -1,0 +1,5 @@
+Function fn_Copy_Range(in_Source_Sheet As Worksheet, in_rng_Copy_Range As Range, in_Destination_Sheet As Worksheet, in_rng_Destination As Range)
+
+in_Source_Sheet.Range(in_rng_Copy_Range.Address).Copy Destination:=in_Destination_Sheet.Range(in_rng_Destination.Address)
+
+End Function
