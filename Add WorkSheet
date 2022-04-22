@@ -1,0 +1,5 @@
+Function fn_Add_WorkSheet(in_Workbook As Workbook, in_SheetName As String)
+
+in_Workbook.Sheets.Add(After:=in_Workbook.Sheets(in_Workbook.Sheets.Count)).Name = in_SheetName
+
+End Function
