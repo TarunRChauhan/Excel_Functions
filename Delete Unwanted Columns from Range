@@ -1,0 +1,31 @@
+Function fn_Delete_UnWanted_Columns(in_Sheet As Worksheet, in_rng_All_Column_To_Check As Range, in_arr_Columns_To_Save As Variant)
+Dim bool_Can_Delete As Boolean
+
+
+bool_Can_Delete = True
+
+
+For i = 1 To in_rng_All_Column_To_Check.Columns.Count - 1
+    
+    If (UBound(in_arr_Columns_To_Save) = in_rng_All_Column_To_Check.Columns.Count - 1) Then
+        Exit Function
+    End If
+    
+    For ctr = 0 To UBound(in_arr_Columns_To_Save)
+        If in_arr_Columns_To_Save(ctr) = in_rng_All_Column_To_Check(1, i) Then
+            bool_Can_Delete = False
+        Exit For
+        End If
+    Next ctr
+    
+    If bool_Can_Delete = True Then
+        in_Sheet.Range(in_rng_All_Column_To_Check.Cells(1, i), in_rng_All_Column_To_Check.Cells(in_rng_All_Column_To_Check.Rows.Count, i)).Select
+        Selection.Delete
+        i = i - 1
+    End If
+    
+    bool_Can_Delete = True
+    
+Next i
+
+End Function
