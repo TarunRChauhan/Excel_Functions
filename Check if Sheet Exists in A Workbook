@@ -1,8 +1,8 @@
 Function fn_Check_If_Sheet_Exists(in_Workbook As Workbook, in_SheetName As String) As Boolean
 Dim bool_Sheet_Exists As Boolean
 
-For i = 1 To in_WorkbookName.Sheets.Count
-    If in_WorkbookName.Sheets(i).Name = in_SheetName Then
+For i = 1 To in_Workbook.Sheets.Count
+    If in_Workbook.Sheets(i).Name = in_SheetName Then
         bool_Sheet_Exists = True
     End If
 Next i
