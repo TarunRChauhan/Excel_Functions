@@ -1,0 +1,8 @@
+Function fn_Create_CurrentRegion_Range(in_rng_Base_Cell_Range As Range) As Range
+Dim rng_Current_Region As Range
+
+Set rng_Current_Region = in_rng_Base_Cell_Range.CurrentRegion
+
+fn_Create_CurrentRegion_Range = rng_Current_Region
+
+End Function
