@@ -7,7 +7,8 @@ Function fn_Insert_Column_In_Range(in_rng_InsertColumnInRange As Range, in_rng_I
 ' This function Adds a Column to the given range, before the Selected Cell Column
 
 'What do you need to provide to the function
-  'It needs the Range Address Where you want to Add a Column - Example: ActiveWorkbook.Sheets(1).Range("C1:E1")
+  'It needs the Entire Range Address Where you want to Add a Column - Example: ActiveWorkbook.Sheets(1).Range("C1:E10")
+  'It needs the Base Range Address where the Column will be Added - Example: ActiveWorkbook.Sheets(1).Range("D1")
 '-----------------------------------------------------------------------------------------
 Dim rng_New_Column_Range As Range
 Dim dbl_Last_Row As Double
