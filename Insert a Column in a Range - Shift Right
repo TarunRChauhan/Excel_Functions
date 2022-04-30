@@ -1,0 +1,25 @@
+
+Function fn_Insert_Column_In_Range(in_rng_InsertColumnInRange As Range, in_rng_InsertAfterRange As Range)
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 30-April-2022
+
+' This function Adds a Column to the given range, before the Selected Cell Column
+
+'What do you need to provide to the function
+  'It needs the Range Address Where you want to Add a Column - Example: ActiveWorkbook.Sheets(1).Range("C1:E1")
+'-----------------------------------------------------------------------------------------
+Dim rng_New_Column_Range As Range
+Dim dbl_Last_Row As Double
+Dim dbl_Last_Column As Double
+
+dbl_Last_Row = in_rng_InsertColumnInRange.Rows.Count + (in_rng_InsertColumnInRange.Cells(1, 1).Row - 1)
+
+'Column is not Used as of Now in the Function
+'dbl_Last_Column = in_rng_InsertColumnInRange.Columns.Count + (in_rng_InsertColumnInRange.Cells(1, 1).Column - 1)
+
+Set rng_New_Column_Range = Range(in_rng_InsertAfterRange, in_rng_InsertAfterRange.Offset(dbl_Last_Row - in_rng_InsertAfterRange.Row, 0))
+
+rng_New_Column_Range.Insert Shift:=xlToRight, CopyOrigin:=xlFormatFromLeftOrAbove
+
+End Function
