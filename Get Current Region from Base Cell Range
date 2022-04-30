@@ -8,10 +8,7 @@ Function fn_Create_CurrentRegion_Range(in_rng_Base_Cell_Range As Range) As Range
 'What do you need to provide to the function
   'It needs the Base Cell Address and the Current Region around it will be Provided to the User - Example: ActiveWorkbook.Sheets(1).Range("C1")
 '-----------------------------------------------------------------------------------------
-Dim rng_Current_Region As Range
 
-Set rng_Current_Region = in_rng_Base_Cell_Range.CurrentRegion
-
-Set fn_Create_CurrentRegion_Range = rng_Current_Region
+Set fn_Create_CurrentRegion_Range = in_rng_Base_Cell_Range.CurrentRegion
 
 End Function
