@@ -1,4 +1,14 @@
 Function fn_Check_If_Sheet_Exists(in_Workbook As Workbook, in_SheetName As String) As Boolean
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
+' This function Checks if a Sheet with a Given Name Exists in a Workbook or Not
+
+'What do you need to provide to the function
+  'It needs an Workbook Object that needs to be Checked for the Sheet - Example: ActiveWorkbook
+  'It need the SheetName in String (text) format - example: "DEP", "Filtered_Data"
+'-----------------------------------------------------------------------------------------
 Dim bool_Sheet_Exists As Boolean
 
 For i = 1 To in_Workbook.Sheets.Count
@@ -8,4 +18,5 @@ For i = 1 To in_Workbook.Sheets.Count
 Next i
 
 fn_Check_If_Sheet_Exists = bool_Sheet_Exists
+
 End Function
