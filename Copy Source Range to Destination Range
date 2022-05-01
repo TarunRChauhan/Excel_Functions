@@ -1,4 +1,16 @@
 Function fn_Copy_Range(in_Source_Sheet As Worksheet, in_rng_Copy_Range As Range, in_Destination_Sheet As Worksheet, in_rng_Destination As Range)
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 23-April-2022
+
+' This function Copies Source Data from Source Sheet into the Specified Sheet at the Specified Range
+
+'What do you need to provide to the function
+  'Source Sheet Object - Example: ActiveSheet
+  'Source Range to be Copied - Example: ActiveSheet.Range("A1:Z26")
+  'Destination Sheet Object - Example: ActiveSheet
+  'Destination Range where Data will be copied - Example: ActiveSheet.Range("A1") - Single Cell Range
+'-----------------------------------------------------------------------------------------
 
 in_Source_Sheet.Range(in_rng_Copy_Range.Address).Copy Destination:=in_Destination_Sheet.Range(in_rng_Destination.Address)
 
