@@ -1,0 +1,18 @@
+Function fn_Add_Table(in_ws_Table_WorkSheet As Worksheet, in_rng_Table_Range As Range, in_str_Table_Name As String, in_str_Table_StyleNameCode As String)
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 01-May-2022
+
+' This function Adds a Table to A specified Worksheet at a Specific Range
+
+'What do you need to provide to the function
+  'Table Sheet Object - Example: ActiveSheet
+  'Table Range as Range - Example: ActiveSheet.Range("A1:Z26")
+  'Table Name in String Format - Example: "Table1"
+  'Table Style Name in String Format - Example: "TableStyleMedium5"
+'-----------------------------------------------------------------------------------------
+
+in_ws_Table_WorkSheet.ListObjects.Add(xlSrcRange, in_rng_Table_Range, , xlYes).Name = in_str_Table_Name
+ActiveSheet.ListObjects(in_str_Table_Name).TableStyle = in_str_Table_StyleNameCode
+
+End Function
