@@ -1,0 +1,24 @@
+Function fn_Replace_Text_In_Range(in_str_Text_To_Replace As String, in_str_Replace_With As String, _
+                        in_rng_Range As Range)
+                        
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 06-May-2022
+
+' This function Replaces a Text with the Provided Text in a given Range
+
+'What do you need to provide to the function
+  'Text that needs to be Replaced - Example: "String 1"
+  'The Replacement Text - Example: "String 1", ""
+  'It also needs the Range To Look for Replacement  - Example: ActiveWorkbook.Sheets(1).Range("D1")
+'-----------------------------------------------------------------------------------------
+in_rng_Range.Replace What:=in_str_Text_To_Replace, _
+        Replacement:=in_str_Replace_With, _
+        LookAt:=xlPart, _
+        SearchOrder:=xlByRows, _
+        MatchCase:=False, _
+        SearchFormat:=False, _
+        ReplaceFormat:=False, _
+        FormulaVersion:=xlReplaceFormula2
+        
+End Function
