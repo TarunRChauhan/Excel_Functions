@@ -1,0 +1,23 @@
+Function fn_Add_Page_Filter_PivotTables(in_pvt_Table As PivotTable, _
+                                        in_str_Field As String, _
+                                        in_Int_Position As Integer)
+                                        
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 22-May-2022
+
+' This function Adds a New Row Field to the Gvven Pivot Table Object
+
+'What do you need to provide to the function
+  'It needs the Pivot Table Object
+  'It need the Pivot Table Filed Name that needs to be added to the Pivto Table Row
+  'It need the Position Number where the Field will be added
+  
+'-----------------------------------------------------------------------------------------
+With in_pvt_Table.PivotFields(in_str_Field)
+    .Orientation = xlPageField
+    .Position = in_Int_Position
+End With
+
+
+End Function
