@@ -1,4 +1,4 @@
-Function fn_Add_Page_Filter_PivotTables(in_pvt_Table As PivotTable, _
+Function fn_Add_Row_Field_PivotTables(in_pvt_Table As PivotTable, _
                                         in_str_Field As String, _
                                         in_Int_Position As Integer)
                                         
