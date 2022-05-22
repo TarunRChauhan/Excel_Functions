@@ -1,0 +1,24 @@
+Function fn_Add_Data_Field_PivotTables(in_pvt_Table As PivotTable, _
+                                        in_str_Field As String)
+
+Dim obj_DataField As PivotField
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 22-May-2022
+
+' This function Adds a New Row Field to the Gvven Pivot Table Object
+
+'What do you need to provide to the function
+  'It needs the Pivot Table Object
+  'It need the Pivot Table Filed Name that needs to be added to the Pivto Table Row
+  'It need the Position Number where the Field will be added
+  
+'-----------------------------------------------------------------------------------------
+
+Set obj_DataField = in_pvt_Table.PivotFields(in_str_Field)
+
+With in_pvt_Table
+    .AddDataField obj_DataField, "Sum of " & in_str_Field, xlSum
+End With
+
+End Function
