@@ -1,0 +1,29 @@
+Function fn_Create_Pivot_Table(in_WB_Pivot_Workbook As Workbook, _
+                                in_rng_PivotDataRange As Range, _
+                                in_rng_Table_Destination As Range, _
+                                in_str_PTableName As String)
+                                
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 22-May-2022
+
+' This function Adds a New PivotTable to the Gvven Range of the given Workbook Object
+
+'What do you need to provide to the function
+  'It needs an Workbook Object to Add the Pivot Cache to - Example: ActiveWorkbook
+  'It need the Data Range object for the Pivot Table - example: ActiveSheet.Range("A1:Z26")
+  'It need the Range object for the Detination of the Pivot Table - example: ActiveSheet.Range("A1:A1")
+  'It need the Pivot Table Name in String format - Example: "MyPivot1"
+'-----------------------------------------------------------------------------------------
+
+Dim PCache As PivotCache
+Dim PTable As PivotTable
+
+MsgBox in_rng_PRange.Address
+Set PCache = in_WB_Pivot_Workbook.PivotCaches.Create _
+            (SourceType:=xlDatabase, SourceData:=in_rng_PRange)
+
+Set PTable = PCache.CreatePivotTable _
+            (TableDestination:=in_rng_Table_Destination, TableName:=in_str_PTableName)
+            
+End Function
