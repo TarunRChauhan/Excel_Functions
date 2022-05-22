@@ -1,0 +1,18 @@
+Function fn_Change_PivotTable_Compact_Row_Heading(in_pvt_Table As PivotTable, _
+                                        in_str_Compact_Heading As String)
+
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 22-May-2022
+
+' This function Adds a New Row Field to the Gvven Pivot Table Object
+
+'What do you need to provide to the function
+  'It needs the Pivot Table Object
+  'It need the String Compact Heading to be given to the Table
+  
+'-----------------------------------------------------------------------------------------
+
+in_pvt_Table.CompactLayoutRowHeader = in_str_Compact_Heading
+
+End Function
