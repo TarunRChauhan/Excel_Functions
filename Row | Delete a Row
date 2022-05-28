@@ -1,0 +1,15 @@
+Function fn_Delete_Row(in_rng_Base_Range_For_New_Column As Range)
+
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 28-May-2022
+
+' This function Deletes the Worksheet from the given Workbook Object
+
+'What do you need to provide to the function
+  'It needs the base range address of the Column to be deleted - Example: ActiveSheet.Range("A1")
+'-----------------------------------------------------------------------------------------
+
+in_rng_Base_Range_For_New_Column.EntireRow.Delete xlShiftUp
+
+End Function
