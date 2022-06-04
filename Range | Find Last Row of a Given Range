@@ -1,0 +1,18 @@
+Function fn_Get_Last_Column_In_Range(in_rng_FindLastColumnInRange As Range) As Range
+'-----------------------------------------------------------------------------------------
+'         Created By: Tarun Chauhan
+'         Date: 03-June-2022
+
+' This function returns the First Cell in the Last Column of the given range
+
+'What do you need to provide to the function
+  'It needs the Range Address that you want find the Last Column of - Example: ActiveWorkbook.Sheets(1).Range("C1:E1")
+'-----------------------------------------------------------------------------------------
+Dim dbl_Last_Column As Double
+Dim rng_Last_Column_Range As Range
+
+Set rng_Last_Column_Range = in_rng_FindLastColumnInRange.Cells(1, 1).Offset(0, in_rng_FindLastColumnInRange.Rows.Count - 1)
+
+Set fn_Get_Last_Column_In_Range = rng_Last_Column_Range
+
+End Function
