@@ -8,16 +8,16 @@ Function fn_Get_Last_Used_Row_First_Cell_In_Range(in_rng_FindInRange As Range) A
 'What do you need to provide to the function
   'It needs the Range Address that you want find the Last Row of - Example: ActiveWorkbook.Sheets(1).Range("C1:E11")
 '-----------------------------------------------------------------------------------------
-Dim dbl_NonBlankCells As Double
+Dim dbl_Last_Cell As Double
 Dim rng_Last_Used_Row_Range As Range
 
-For Each rng_Temp In in_rng_FindLastUsedRowInRange.Columns
+For Each rng_Temp In in_rng_FindInRange.Columns
     If rng_Temp.Cells.SpecialCells(xlCellTypeConstants).Count > dbl_NonBlankCells Then
-        dbl_NonBlankCells = rng_Temp.Cells.SpecialCells(xlCellTypeConstants).Count
+        dbl_Last_Cell = rng_Temp.Cells(rng_Temp.Rows.Count, 1).End(xlUp).Row
         Set rng_Last_Used_Row_Range = rng_Temp
     End If
 Next rng_Temp
 
-Set fn_Get_Last_Used_Row_In_Range = rng_Last_Used_Row_Range
+Set fn_Get_Last_Used_Row_First_Cell_In_Range = rng_Last_Used_Row_Range.Cells(dbl_Last_Cell, 1)
 
 End Function
